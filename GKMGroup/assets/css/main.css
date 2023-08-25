@@ -1683,25 +1683,13 @@ code cũ
   
 }
 
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #5846f9;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #5846f9;
-}
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
+.testimonials .testimonial-wrap {
+  padding-left: 50px;
+}
+
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
@@ -1709,36 +1697,40 @@ code cũ
 
 .testimonials .testimonial-item {
   box-sizing: content-box;
-  min-height: 320px;
-  
+  padding: 30px 30px 30px 60px;
+  margin: 30px 15px;
+  min-height: 200px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  background: #fff;
+  text-align: justify;
+
 }
 
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
-  border-radius: 50%;
-  margin: -40px 0 0 40px;
-  position: relative;
-  z-index: 2;
+  border-radius: 10px;
   border: 6px solid #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: -45px;
 }
 
 .testimonials .testimonial-item h3 {
   font-size: 18px;
   font-weight: bold;
-  margin: 10px 0 5px 45px;
-  color: #2c4964;
+  margin: 10px 0 5px 0;
+  color: #111;
 }
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
   color: #999;
-  margin: 0 0 0 45px;
+  margin: 0;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #b1a9fc;
+  color: rgba(var(--color-primary-rgb), 0.3);
   font-size: 26px;
 }
 
@@ -1757,14 +1749,7 @@ code cũ
 
 .testimonials .testimonial-item p {
   font-style: italic;
-  margin: 0 15px 0 15px;
-  padding: 20px 20px 60px 20px;
-  background: #fff;
-  position: relative;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+  margin: 15px auto 15px auto;
 }
 
 .testimonials .swiper-pagination {
@@ -1777,12 +1762,34 @@ code cũ
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #5846f9;
+  border: 1px solid var(--color-primary-dark);
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #5846f9;
+  background-color: var(--color-primary-dark);
 }
+
+@media (max-width: 767px) {
+  .testimonials .testimonial-wrap {
+    padding-left: 0;
+  }
+
+  .testimonials .testimonials-carousel,
+  .testimonials .testimonials-slider {
+    overflow: hidden;
+  }
+
+  .testimonials .testimonial-item {
+    padding: 30px;
+    margin: 15px;
+  }
+
+  .testimonials .testimonial-item .testimonial-img {
+    position: static;
+    left: auto;
+  }
+}
+
 @media (min-width: 1200px) {
   .testimonials .testimonial-item p {
     height: 450px;
@@ -1912,90 +1919,6 @@ code cũ
 }
 
 /*--------------------------------------------------------------
-# F.A.Q Section
---------------------------------------------------------------*/
-@media (max-width: 991px) {
-  .faq {
-    padding: 0;
-  }
-}
-
-.faq .content h3 {
-  font-weight: 400;
-  font-size: 34px;
-  color: var(--color-secondary);
-}
-
-.faq .content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 5px;
-}
-
-.faq .content p {
-  font-size: 15px;
-  color: var(--color-gray);
-}
-
-.faq .img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  min-height: 400px;
-}
-
-.faq .accordion-item {
-  border: 0;
-  margin-top: 15px;
-  box-shadow: 0px 5px 25px 0px rgba(var(--color-black-rgb), 0.06);
-}
-
-.faq .accordion-collapse {
-  border: 0;
-}
-
-.faq .accordion-button {
-  padding: 15px 40px 20px 60px;
-  font-weight: 600;
-  border: 0;
-  font-size: 18px;
-  color: var(--color-default);
-  text-align: left;
-  background: var(--color-white);
-  box-shadow: none;
-  border-radius: 5px;
-}
-
-.faq .accordion-button:not(.collapsed) {
-  color: var(--color-primary);
-  border-bottom: 0;
-  box-shadow: none;
-}
-
-.faq .question-icon {
-  position: absolute;
-  top: 14px;
-  left: 25px;
-  font-size: 20px;
-  color: var(--color-primary);
-}
-
-.faq .accordion-button:after {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  color: var(--color-primary);
-}
-
-.faq .accordion-body {
-  padding: 0 30px 25px 60px;
-  border: 0;
-  border-radius: 5px;
-  background: var(--color-white);
-  box-shadow: none;
-}
-
-/*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
 .portfolio .portfolio-flters {
@@ -2113,6 +2036,32 @@ code cũ
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+.team .team-member {
+  width:400px;
+  height: 400px;
+}
+@media (max-width: 1399px) {
+
+  .team .team-member {
+    width:350px;
+    height: 350px;
+  }
+}
+@media (max-width: 992px) {
+
+  .team .team-member {
+    width:320px;
+    height: 320px;
+  }
+}
+@media (max-width: 348px) {
+
+  .team .team-member {
+    width:250px;
+    height: 250px;
+  }
+}
+
 .team .team-member .member-img {
   border-radius: 8px;
   overflow: hidden;
@@ -3689,4 +3638,558 @@ font-weight: 500;
       background-image: none;
     }
   }
+}
+
+
+
+
+/*--------------------------------------------------------------
+# chương trình đào tạo
+--------------------------------------------------------------*/
+.course .post-box {
+  transition: 0.3s;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.course .post-img-sticky {
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+}
+
+.course .post-box .post-img {
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.course .post-box .post-img img {
+  transition: 0.5s;
+}
+
+.course .post-box .meta {
+  margin-top: 15px;
+}
+
+.course .post-box .meta .post-date {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.course .post-box .meta .post-author {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-secondary);
+}
+
+.course .post-box .post-title {
+  font-size: 24px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin: 15px 0 0 0;
+  position: relative;
+  transition: 0.3s;
+}
+
+.course .post-box p {
+  margin: 15px 0 0 0;
+  color: rgba(var(--color-secondary-dark-rgb), 0.7);
+}
+
+.course .post-box .readmore {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.course .post-box .readmore i {
+  line-height: 0;
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.course .post-box:hover .post-title {
+  color: var(--color-primary);
+}
+
+.course .post-box:hover .post-img img {
+  transform: scale(1.1);
+}
+
+
+
+/*--------------------------------------------------------------
+# Flip
+--------------------------------------------------------------*/
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateX(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front,
+  .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+ 
+  /* Style the back side */
+  .flip-box-back {
+    width: 100%;
+    transform: rotateX(180deg);
+  }
+
+/*--------------------------------------------------------------
+# Course Services
+--------------------------------------------------------------*/
+.course_services .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 10px 60px;
+}
+
+.course_services .icon-box i {
+  font-size: 48px;
+  float: left;
+  color: var(--color-primary);
+}
+
+.course_services .icon-box p {
+  font-size: 15px;
+  color: var(--color-primary-dark);
+  margin-left: 60px;
+}
+
+.course_services .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Course About Us
+--------------------------------------------------------------*/
+.course_about .image {
+  padding: 20px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course_about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.course_about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.course_about .content ul li {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.course_about .content ul i {
+  font-size: 24px;
+  padding: 2px 6px 0 0;
+  color: var(--color-primary);
+}
+
+.course_about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.course_services .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 10px 60px;
+}
+
+.course_services .icon-box i {
+  font-size: 48px;
+  float: left;
+  color: var(--color-primary);
+}
+
+.course_services .icon-box p {
+  font-size: 15px;
+  color: #959595;
+  margin-left: 60px;
+}
+
+.course_services .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+
+/*--------------------------------------------------------------
+# Featured
+--------------------------------------------------------------*/
+.course_featured {
+  padding: 40px 0 0 0;
+  background: white;
+}
+
+.course_featured .nav-tabs {
+  border: 0;
+}
+.course_featured .nav-tabs  i {
+  font-size: 48px;
+  float: left;
+}
+.course_featured .nav-link {
+  border: 0;
+  padding: 20px;
+  color: #151515;
+  transition: 0.3s;
+}
+
+.course_featured .nav-link h4 {
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-left: 60px;
+}
+
+.course_featured .nav-link:hover h4 {
+  color: var(--color-primary);
+}
+.course_featured .nav-link:hover  i {
+  color: var(--color-primary);
+}
+
+.course_featured .nav-link p {
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-left: 60px;
+}
+
+.course_featured .nav-link.active {
+  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.08);
+}
+
+.course_featured .nav-link.active h4 {
+  color: var(--color-primary);
+}
+.course_featured .nav-link.active i {
+  color: var(--color-primary);
+}
+.course_featured .tab-pane.active {
+  animation: slide-down 0.5s ease-out;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.course_why-us {
+  background: whitesmoke;
+  padding: 0;
+}
+
+.course_why-us .content {
+  padding: 60px 100px 0 100px;
+}
+
+.course_why-us .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.course_why-us .content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.course_why-us .content p {
+  font-size: 15px;
+  color: #959595;
+}
+
+.course_why-us .video-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 400px;
+  position: relative;
+}
+
+.course_why-us .accordion-list {
+  padding: 0 100px 60px 100px;
+}
+
+.course_why-us .accordion-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.course_why-us .accordion-list li+li {
+  margin-top: 15px;
+}
+
+.course_why-us .accordion-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.course_why-us .accordion-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding-right: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.course_why-us .accordion-list span {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.course_why-us .accordion-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.course_why-us .accordion-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.course_why-us .accordion-list .icon-show {
+  display: none;
+}
+
+.course_why-us .accordion-list a.collapsed {
+  color: #343a40;
+}
+
+.course_why-us .accordion-list a.collapsed:hover {
+  color: var(--color-primary);
+}
+
+.course_why-us .accordion-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.course_why-us .accordion-list a.collapsed .icon-close {
+  display: none;
+}
+
+.course_why-us .play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(var(--color-primary) 50%, rgba(var(--color-primary-rgb), 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  overflow: hidden;
+}
+
+.course_why-us .play-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.course_why-us .play-btn::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(var(--color-primary-rgb), 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.course_why-us .play-btn:hover::after {
+  border-left: 15px solid var(--color-primary);
+  transform: scale(20);
+}
+
+.course_why-us .play-btn:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+@media (max-width: 1024px) {
+
+  .course_why-us .content,
+  .course_why-us .accordion-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .course_why-us .content {
+    padding-top: 30px;
+  }
+
+  .course_why-us .accordion-list {
+    padding-bottom: 30px;
+  }
+}
+
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.faq .faq-list {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: var(--color-primary) ;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.faq .faq-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: var(--color-primary);
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
 }

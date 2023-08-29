@@ -17,7 +17,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +35,6 @@
   <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
 
   <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="assets/css/animate.css" />
   <link href="assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -107,204 +105,240 @@
 
   <main id="main">
 
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Blog Details</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li>Blog Details</li>
+          </ol>
+        </div>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
         <div class="row g-5">
 
-          <div class="col-lg-8" id="post-content">
-            <div class="container section-wrapper">
-              <div class="section-content">
-                  <div class="row">
-                      <div class="col-md-10 col-md-offset-1 text-center">
-                          <h2 class="text-white">Responsive Timeline with Bootstrap Collapse</h2>
-  
-                          <p class="animated bounceInLeft">
-                              <a href="http://www.programming-free.com/2015/09/responsive-timeline-with-bootstrap.html" class="button green small">Tutorial</a> 
-                              <a href="https://github.com/priyadb/BootstrapTimelineCollapse/archive/master.zip" class="button red small">Download</a>
-                              <span class="divider center"></span>
-                          </p>                        
-                      </div>
-                      <!-- //.col-md-8 -->
-                  </div>
-                  <!-- //.row -->
-                              
-                  <!-- EXPERIENCE START -->
-                  <div class="row">
-                      <div class="col-md-10 col-md-offset-1">
-                          <h3 class="text-center text-yellow">
-                              MY WORK EXPERIENCE
-                          </h3>
-                          <div class="panel-group timeline" id="experience">
-                              <div class="timeline-item">
-                                  <div class="timeline-year">
-                                      <span class="timeline-year">2014 - Now</span>
-                                  </div>
-                                  <!-- //.timeline-year -->
-  
-                                  <div class="timeline-btn">
-                                      <a href="#exp1" data-toggle="collapse" data-parent="#experience"></a>
-                                  </div>
-                                  <!-- //.timeline-btn -->
-  
-                                  <div class="panel">
-                                      <div class="panel-heading">
-                                          <div class="panel-title">
-                                              <h4>Endeca Developer - Comp Name - Location</h4>
-                                          </div>
-                                          <!-- //.panel-title -->
-                                      </div>
-                                      <!-- //.panel-heading -->
-  
-                                      <div id="exp1" class="panel-collapse collapse in">
-                                          <div class="panel-body">
-                                              <p>
-                                                  Responsibilities:
-                                                  <br>
-                                                  - Workspace setup with all OOTB Endeca features 
-                                                  - Customized OOTB features based on requirements
-                                                  - BCC merchandizing workflow
-                                                  - Custom components created to use Assembler API's for content Item, content collections, static content & Guided search services
-                                                  - Indexed data using PSOC configurations
-                                                  - Designed and developed search,browse and product pages
-                                                  - Extensively used Experience Manager
-                                                  - Created custom cartridges and templates
-                                                  - Custom cartridge handlers and property accessors 
-                                                  - Used Endeca SEO & Site-map generator framework with customized configurations                                              
-                                              </p>
-                                          </div>
-                                          <!-- //.panel-body -->
-                                      </div>
-                                      <!-- //.panel-collapse -->
-                                  </div>
-                                  <!-- //.panel -->
-                              </div>
-                              <!-- //.timeline-item -->
-  
-                              <div class="timeline-item animated bounceInUp">
-                                  <div class="timeline-year">
-                                      <span class="timeline-year">2013 - 2014</span>
-                                  </div>
-                                  <!-- //.timeline-year -->
-  
-                                  <div class="timeline-btn">
-                                      <a href="#exp2" class="collapsed" data-toggle="collapse" data-parent="#experience" aria-expanded="true"></a>
-                                  </div>
-                                  <!-- //.timeline-btn -->
-  
-                                  <div class="panel">
-                                      <div class="panel-heading">
-                                          <div class="panel-title">
-                                              <h4>Associate - Comp Name</h4>
-                                          </div>
-                                          <!-- //.panel-title -->
-                                      </div>
-                                      <!-- //.panel-heading -->
-  
-                                      <div id="exp2" class="panel-collapse collapse">
-                                          <div class="panel-body">
-                                              <p>
-                                                  Technologies Worked On:
-                                                  <br>                                          
-                                                  Oracle Endeca Assembler API, Oracle Endeca Experience Manager, Oracle Endeca Guided Search, Oracle Endeca Presentation API (Both .NET & Java), Oracle Autovue, Oracle Endeca Content Acquisition System, Oracle Endeca Information Discovery Studio,Advanced Java Development with Liferay Portal, .NET Development for standalone Endeca Applications using Endeca .NET API
-                                              </p>
-                                          </div>
-                                          <!-- //.panel-body -->
-                                      </div>
-                                      <!-- //.panel-collapse -->
-                                  </div>
-                                  <!-- //.panel -->
-                              </div>
-                              <!-- //.timeline-item -->
-  
-                              <div class="timeline-item animated bounceInUp">
-                                  <div class="timeline-year">
-                                      <span class="timeline-year">2011 - 2013</span>
-                                  </div>
-                                  <!-- //.timeline-year -->
-  
-                                  <div class="timeline-btn">
-                                      <a href="#exp3" class="collapsed" data-toggle="collapse" data-parent="#experience"></a>
-                                  </div>
-                                  <!-- //.timeline-btn -->
-  
-                                  <div class="panel">
-                                      <div class="panel-heading">
-                                          <div class="panel-title">
-                                              <h4>Programmer Analyst - Comp Name</h4>
-                                          </div>
-                                          <!-- //.panel-title -->
-                                      </div>
-                                      <!-- //.panel-heading -->
-  
-                                      <div id="exp3" class="panel-collapse collapse">
-                                          <div class="panel-body">
-                                              <p>
-                                                  Technologies Worked On:
-                                                  <br>                                               
-                                                Oracle Endeca Guided Search, Oracle Endeca Presentation API, Oracle Autovue, Oracle Endeca Content Acquisition System, 
-                                              </p>
-                                          </div>
-                                          <!-- //.panel-body -->
-                                      </div>
-                                      <!-- //.panel-collapse -->
-                                  </div>
-                                  <!-- //.panel -->
-                              </div>
-                              <!-- //.timeline-item -->
-  
-                              <div class="timeline-item animated bounceInUp">
-                                  <div class="timeline-year">
-                                      <span class="timeline-year">2010 - 2011</span>
-                                  </div>
-                                  <!-- //.timeline-year -->
-  
-                                  <div class="timeline-btn">
-                                      <a href="#exp4" class="collapsed" data-toggle="collapse" data-parent="#experience"></a>
-                                  </div>
-                                  <!-- //.timeline-btn -->
-  
-                                  <div class="panel">
-                                      <div class="panel-heading">
-                                          <div class="panel-title">
-                                              <h4>Programmer Analyst Trainee - Comp Name</h4>
-                                          </div>
-                                          <!-- //.panel-title -->
-                                      </div>
-                                      <!-- //.panel-heading -->
-  
-                                      <div id="exp4" class="panel-collapse collapse">
-                                          <div class="panel-body">
-                                              <p>
-                                                  Responsibilities:
-                                                  <br>
-                                                  Advanced Java Developer, 
-                                                  Front End View Editing, 
-                                                  Intervowen Teamsite Template creation,
-                                                  Minor Pipeline Changes in Endeca IAP Developer Studio, 
-                                                  Creating crawls, troubleshooting crawl failures, improving crawl performance using Endeca Content Acquisition System
-                                              </p>
-                                          </div>
-                                          <!-- //.panel-body -->
-                                      </div>
-                                      <!-- //.panel-collapse -->
-                                  </div>
-                                  <!-- //.panel -->
-                              </div>
-                              <!-- //.timeline-item -->
-                          </div>
-                          <!-- //.panel-group -->
-                      </div>
-                      <!-- //.col-md-10 -->
-                  </div>
-                  <!-- //EXPERIENCE END -->
+          <div class="col-lg-8">
+
+            <article class="blog-details">
+
+              <div class="post-img">
+                <img src="assets/img/gkm_0.png" alt="" class="img-fluid">
               </div>
-              <!-- //.section-content -->
-          </div>
+
+              <h2 class="title">Hành trình kiến tạo Công nghệ Quản trị Tinh gọn Made in Vietnam</h2>
+
+              <div class="meta-top">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">Tin GKM</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                </ul>
+              </div><!-- End meta top -->
+
+              <div class="content">
+                <p>
+                  Sự thịnh vượng văn minh của một quốc gia được đo lường bằng chất lượng những sản phẩm và dịch vụ mà con người của quốc gia đó tạo ra. Mỗi một quốc gia hay nói cách khác là toàn bộ doanh nghiệp của quốc gia đó cần dựa theo thế mạnh của mình, phát triển các sản phẩm, dịch vụ chủ lực đẳng cấp, thay thế hàng nhập khẩu, từng bước xuất khẩu để hướng đến sự phát triển bền vững, trường tồn. Giữ trong mình khát khao cháy bỏng giúp đất nước phát triển, PGS.TS Nguyễn Đăng Minh đã sáng lập ra “Công nghệ Quản trị Tinh gọn Made in Vietnam” là một giải pháp để hiện thực hóa ước mơ đó. Sau đây là hành trình kiến tạo và lan tỏa Công nghệ cho hàng ngàn doanh nghiệp và tổ chức Việt.
+                </p>
+                <img src="assets/img/gkm_01.png" class="img-fluid" alt="">
+                <p>
+                  Chứng kiến vòng đời doanh nghiệp Việt quá ngắn ngủi, từng thế hệ sinh ra, phát triển và lụi tàn mà không kịp đúc rút bài học cho thế hệ sau. Thầy luôn trăn trở nguyên nhân vì sao người Việt thông minh, giỏi nghề nhưng khi bắt đầu mở doanh nghiệp thì năng suất giảm, chất lượng không được như kì vọng. Sau quá trình tìm hiểu, nghiên cứu, Thầy nhận ra vấn đề mà người Việt đang gặp phải không phải là về kĩ thuật, nghề mà là về quản trị. 
+                </p>
+                <img src="assets/img/gkm_02.png" class="img-fluid" alt="">
+                <p>
+                  Năm 1998, sau khi tốt nghiệp Đại học Bách khoa Hà Nội, Thầy được học bổng sang Nhật Bản, ở đây Thầy dành thời gian tiếp cận những nơi tinh hoa nhất về nghề và quản trị để sau này mang về giúp doanh nghiệp, tổ chức Việt. Quá trình sinh sống và làm việc tại Nhật còn giúp Thầy thấu hiểu được phương pháp người Nhật kiến tạo sự “tinh hoa” và “gọn gàng” thông qua từng công việc thường ngày và bên trong sản phẩm và dịch vụ Nhật. Trong quãng thời gian vừa làm việc ở Tập đoàn Toyota vừa học và nghiên cứu Tiến sĩ tại Đại học Tổng hợp Nayoga, Thầy đã phát hiện ra vấn đề thực sự của quản trị nước nhà.
+                </p>
+                <img src="assets/img/gkm_03.png" class="img-fluid" alt="">
+
+                <blockquote>
+                  <p>
+                    Việc nhập khẩu công nghệ, khoa học kỹ thuật có thể đạt hiệu quả tương đương nguyên bản, nhưng nhập khẩu các giải pháp quản trị của Thế giới không đem được hiệu quả do không phù hợp với văn hóa, bản sắc con người Việt Nam. Vì vậy mỗi quốc gia, mỗi dân tộc phải tự tìm ra và hoàn thiện giải pháp quản trị dành riêng cho quốc gia, dân tộc mình.
+                  </p>
+                </blockquote>
+                <img src="assets/img/gkm_04.png" class="img-fluid" alt="">
+
+                <p>
+                  Năm 2011, Thầy quyết định về nước tham gia trực tiếp vào giải quyết các vấn đề thực tiễn của hơn 300 doanh nghiệp Việt. Thấu hiểu từng căn bệnh của doanh nghiệp từ đó đúc rút, hoàn thiện bộ giải pháp, đó là một công nghệ quản trị độc lập với công nghệ kĩ thuật, công nghệ nghề, có thể áp dụng cho mọi cá nhân, tổ chức Việt bất kì cấu trúc, quy mô, lĩnh vực để nâng cao năng suất và lợi nhuận.
+                </p>
+                <blockquote>
+                  <p>
+                    Công nghệ Quản trị Tinh gọn Made in Vietnam là công nghệ quản trị xây dựng dựa trên khát vọng của người Việt, dành cho người Việt. Giúp con người, sản phẩm và dịch vụ Việt ngày càng tinh hoa, gọn gàng hơn, từ đó không ngừng tạo ra lợi nhuận, giá trị gia tăng góp phần vào sự phát triển bền vững của đất nước và nhân loại.
+                  </p>
+                </blockquote>
+                <p>
+                  Những ngày đầu tiên Thầy đề xuất giải pháp này, giới doanh nhân Việt không mấy quan tâm, họ vẫn ưu tiên lựa chọn hệ thống quản trị "Made in USA"(Mỹ), hay "Made in Japan" (Nhật Bản) thay vì "Made in Vietnam". Tuy niên nhờ khát vọng giúp xã hội phát triển là động lực giúp Thầy vẫn kiên trì truyền thổi Công nghệ Quản trị Thuần Việt này đến từng doanh nghiệp, tổ chức. Thực tế đã chứng minh, đã có hàng ngàn doanh nghiệp đã và đang áp dụng hiệu quả từng phần hoặc toàn phần các giải pháp của “Công nghệ Quản trị Tinh gọn Made in Vietnam”.
+                </p>
+                <img src="assets/img/gkm_05.png" class="img-fluid" alt="">
+                <blockquote>
+                  <p>
+                    Không dừng lại ở đó, Thầy còn có khát vọng lớn hơn, lan toả công nghệ quản trị đến từng  gia đình, doanh nghiệp, nhà trường và toàn bộ xã hội vì một tương lai Việt Nam thịnh vượng, hùng cường.
+                  </p>
+                </blockquote>
+                
+
+              </div><!-- End post content -->
+
+              <div class="meta-bottom">
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="#">Business</a></li>
+                </ul>
+
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div><!-- End meta bottom -->
+
+            </article><!-- End blog post -->
+
+            <div class="post-author d-flex align-items-center">
+              <img src="assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
+              <div>
+                <h4>test</h4>
+                <div class="social-links">
+                  <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                  test
+                </p>
+              </div>
+            </div><!-- End post author -->
+
+            <div class="comments">
+
+              <h4 class="comments-count">8 Comments</h4>
+
+              <div id="comment-1" class="comment">
+                <div class="d-flex">
+                  <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+                  <div>
+                    <h5><a href="">test</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan,2022</time>
+                    <p>
+                      test
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End comment #1 -->
+
+              <div id="comment-2" class="comment">
+                <div class="d-flex">
+                  <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+                  <div>
+                    <h5><a href="">test</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan,2022</time>
+                    <p>
+                      test
+                    </p>
+                  </div>
+                </div>
+
+                <div id="comment-reply-1" class="comment comment-reply">
+                  <div class="d-flex">
+                    <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
+                    <div>
+                      <h5><a href="">test</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                      <time datetime="2020-01-01">01 Jan,2022</time>
+                      <p>
+                        test
+                      </p>
+                    </div>
+                  </div>
+
+                  <div id="comment-reply-2" class="comment comment-reply">
+                    <div class="d-flex">
+                      <div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
+                      <div>
+                        <h5><a href="">test</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                        <time datetime="2020-01-01">01 Jan,2022</time>
+                        <p>
+                          test
+                        </p>
+                      </div>
+                    </div>
+
+                  </div><!-- End comment reply #2-->
+
+                </div><!-- End comment reply #1-->
+
+              </div><!-- End comment #2-->
+
+              <div id="comment-3" class="comment">
+                <div class="d-flex">
+                  <div class="comment-img"><img src="assets/img/blog/comments-5.jpg" alt=""></div>
+                  <div>
+                    <h5><a href="">test</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan,2022</time>
+                    <p>
+                      test
+                     </p>
+                  </div>
+                </div>
+
+              </div><!-- End comment #3 -->
+
+              <div id="comment-4" class="comment">
+                <div class="d-flex">
+                  <div class="comment-img"><img src="assets/img/blog/comments-6.jpg" alt=""></div>
+                  <div>
+                    <h5><a href="">test</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan,2022</time>
+                    <p>
+                      test
+                    </p>
+                  </div>
+                </div>
+
+              </div><!-- End comment #4 -->
+
+              <div class="reply-form">
+
+                <h4>Leave a Reply</h4>
+                <p>Your email address will not be published. Required fields are marked * </p>
+                <form action="">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col form-group">
+                      <input name="website" type="text" class="form-control" placeholder="Your Website">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col form-group">
+                      <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Post Comment</button>
+
+                </form>
+
+              </div>
+
+            </div><!-- End blog comments -->
+
           </div>
 
-          <div class="col-lg-4" id="post-extra">
+          <div class="col-lg-4">
 
             <div class="sidebar">
 
@@ -523,11 +557,6 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>

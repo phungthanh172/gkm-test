@@ -4193,3 +4193,296 @@ font-weight: 500;
 .faq .faq-list a.collapsed .icon-close {
   display: none;
 }
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Timeline
+--------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------------*/
+/*  TIMELINE
+/*---------------------------------------------------------------------*/
+
+.panel-group.timeline {
+position: relative;
+margin-top: 30px;
+}
+
+.panel-group.timeline .timeline-item {
+position: relative;
+margin-bottom: 40px;
+}
+
+@media (min-width: 568px) {
+.panel-group.timeline .timeline-item {
+  margin-bottom: 20px;
+}
+}
+
+@media (min-width: 768px) {
+.panel-group.timeline .timeline-item:before {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: calc(100% + 20px);
+  top: 0;
+  left: 170px;
+  border-left: 1px dashed #fff;
+}
+}
+
+.panel-group.timeline .timeline-item:last-child {
+margin-bottom: 0px;
+}
+
+.panel-group.timeline .timeline-item:last-child:before {
+display: none;
+}
+
+.panel-group.timeline .timeline-item .timeline-year {
+display: block;
+position: relative;
+width: 120px;
+height: 40px;
+margin-bottom: -20px;
+margin-right: auto;
+margin-left: auto;
+line-height: 40px;
+background-color: #DCC417;
+text-align: center;
+font-weight: 700;
+text-transform: uppercase;
+border-radius: 4px;
+}
+
+@media (min-width: 568px) {
+.panel-group.timeline .timeline-item .timeline-year {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+}
+
+.panel-group.timeline .timeline-item .timeline-btn {
+position: absolute;
+z-index: 5;
+top: 0;
+left: 150px;
+width: 40px;
+height: 40px;
+background-color: #C70E32;
+border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+.panel-group.timeline .timeline-item .timeline-btn {
+  display: none;
+}
+}
+
+.panel-group.timeline .timeline-item .timeline-btn > a {
+display: block;
+position: absolute;
+z-index: 10;
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+}
+
+.panel-group.timeline .timeline-item .timeline-btn > a:before {
+display: block;
+position: absolute;
+z-index: 15;
+content: '-';
+top: 0;
+left: 0;
+width: 40px;
+height: 40px;
+line-height: 38px;
+color: #ffffff;
+font-size: 30px;
+font-weight: 700;
+text-align: center;
+}
+
+.panel-group.timeline .timeline-item .timeline-btn > a.collapsed:before {
+content: '+';
+}
+
+.panel-group.timeline .timeline-item .panel {
+padding: 10px;
+width: 100%;
+background: transparent;
+border: 1px solid #DCCECE;
+border-radius: 0px;
+}
+
+@media (min-width: 568px) {
+.panel-group.timeline .timeline-item .panel {
+  width: calc(100% - 140px);
+  margin-left: 140px;
+}
+}
+
+@media (min-width: 768px) {
+.panel-group.timeline .timeline-item .panel {
+  width: calc(100% - 210px);
+  margin-left: 210px;
+}
+}
+
+.panel-group.timeline .timeline-item .panel .panel-heading {
+position: relative;
+}
+
+.panel-group.timeline .timeline-item .panel .panel-heading .panel-title {
+text-transform: uppercase;
+color:#11ECD2;
+}
+
+@media (max-width: 567px) {
+.panel-group.timeline .timeline-item .panel .panel-heading .panel-title {
+  padding-top: 20px;
+}
+}
+
+.panel-group.timeline .timeline-item .panel .panel-collapse .panel-body {
+padding-top: 5px;
+border-top: none;
+color:#DCCECE;
+}
+
+.panel-group.timeline .timeline-item .panel .panel-collapse .panel-body p {
+margin-bottom: 0px;
+}
+
+/*---------------------------------------------------------------------*/
+/*  TUTORIAL INTRODUCTION - IGNORE THIS
+/*---------------------------------------------------------------------*/
+
+.button{
+display:inline-block;
+text-transform:uppercase;
+padding:1em 1.5em 0.75em;
+border-radius:2px;
+font-weight:bold;
+border:none;color:#fff !important;
+text-decoration:none;
+font-family:'Open Sans Condensed',sans-serif;
+font-size:14px;
+line-height:1;
+cursor:pointer;
+margin-right:10px;
+margin-top:20px;
+}
+.button:hover{
+opacity:0.9;
+text-decoration:none;
+}
+.button.green{
+background-color:#a5d16d;
+box-shadow:0 0 5px #a4cf6c inset, 0 1px 1px #eee
+}
+.button.red{
+background-color:#f4836a;
+box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
+}
+.button.small{font-size:11px}
+
+
+
+/*--------------------------------------------------------------
+# Course Section
+--------------------------------------------------------------*/
+.course .course-member {
+  width:400px;
+  height: 100%;
+}
+
+.course .course-member .member-img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.course .course-member .social {
+  position: absolute;
+  left: 0;
+  top: -18px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course .course-member .social a {
+  transition: color 0.3s;
+  color: var(--color-white);
+  background: var(--color-primary);
+  margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.course .course-member .social a i {
+  line-height: 0;
+  font-size: 16px;
+}
+
+.course .course-member .social a:hover {
+  background: var(--color-primary-light);
+}
+
+.course .course-member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.course .course-member .member-info {
+  padding: 30px 15px;
+  text-align: center;
+  box-shadow: 0px 2px 15px rgba(var(--color-black-rgb), 0.1);
+  background: var(--color-white);
+  margin: -50px 20px 0 20px;
+  position: relative;
+  border-radius: 8px;
+}
+
+.course .course-member .member-info h4 {
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: var(--color-secondary);
+}
+
+.course .course-member .member-info span {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray);
+}
+
+.course .course-member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: var(--color-gray);
+}
+
+.course .course-member:hover .social {
+  opacity: 1;
+}

@@ -94,10 +94,12 @@ section {
 }
 
 .section-header h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
   font-size: 48px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  color: var(--color-secondary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--color-primary);
 }
 
 .section-header p {
@@ -264,6 +266,29 @@ section {
   .header .btn-getstarted:focus {
     margin-right: 50px;
   }
+}
+.header .btn-language{
+  font-size: 16px;
+  color: var(--color-primary);
+  background: var(--color-white);
+  padding: 8px 23px;
+  font-family: var(--font-secondary);
+}
+.header .btn-language:hover{
+  color: var(--color-white);
+  background: rgba(var(--color-primary-rgb),0.9);
+}
+.header .btn-language-selected{
+  font-size: 16px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  padding: 8px 23px;
+  font-family: var(--font-secondary);
+}
+.header .btn-language-selected:hover{
+  color: var(--color-white);
+
+  background: rgba(var(--color-primary-rgb),0.9);
 }
 
 /*--------------------------------------------------------------
@@ -1635,9 +1660,12 @@ code cũ
 }
 
 .features .tab-pane h3 {
-  font-weight: 600;
-  font-size: 36px;
-  color: var(--color-secondary);
+  
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: var(--color-primary);
+  
 }
 
 .features .tab-pane ul {
@@ -1749,12 +1777,72 @@ code cũ
   height: 450px;
 }
 .new-sach{
-  height: 150px;
+  height: 250px;
+  box-shadow: 0px 5px 15px rgba(var(--color-black-rgb), 0.3);
+
 }
-.new-client .new-client-item {
+.new-sach:hover{
+  box-shadow: 0px 5px 30px rgba(var(--color-primary-rgb), 0.3);
+}
+.new-client .video-item {
+  box-shadow: 0px 5px 15px rgba(var(--color-black-rgb), 0.3);
+}
+.new-client .video-item:hover {
+  box-shadow: 0px 5px 30px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.new-client .video-item {
   box-sizing: content-box;
-  min-height: 320px;
+  height: 225px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+}
+
+/* Title video*/
+.new-client .video-item .title-video{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: justify;
+  margin: 10px 10px 5px 10px;
+  color: var(--color-white);
+}
+/*--------------------------------------------------------------
+# Video
+--------------------------------------------------------------*/
+.new-video{
+  width: 250px;
+}
+.video-sec {
+  padding: 0 0 60px 0;
+}
+.video-image{
+  height:450px;
+}
+
+
+.video-sec .video-item {
+  box-sizing: content-box;
+  height: 400px;
   
+}
+
+.swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid var(--color-primary-dark);
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-primary-dark);
 }
 
 /*--------------------------------------------------------------
@@ -1800,6 +1888,8 @@ code cũ
   font-size: 14px;
   color: #999;
   margin: 0;
+  min-height: 30px;
+
 }
 
 .testimonials .testimonial-item .quote-icon-left,
@@ -3270,22 +3360,22 @@ border-color: #a60b23;
 color: #ffffff;
 }
 .features .nav-link.active .gkmlean {
-content:url("https://gkmedu.gkm.vn/wp-content/uploads/2023/01/GKM_Lean_2.png");
+content:url("../img/logo/GKM_finest_2.png");
 }
 .features .nav-link.active .gkmedu {
-content:url("https://gkmedu.gkm.vn/wp-content/uploads/2023/01/GKM_Edu_2.png");
+content:url("../img/logo/GKM_edu_2.png");
 }
 .features .nav-link.active .gkmtech {
-content:url("https://gkmedu.gkm.vn/wp-content/uploads/2023/01/GKM_Tech_2.png");
+content:url("../img/logo/GKM_tech_2.png");
 }
 .features .nav-link.active .gkmservice {
-content:url("https://gkmedu.gkm.vn/wp-content/uploads/2023/01/GKM_Service_2.png");
+content:url("../img/logo/GKM_service_2.png");
 }
 .features .nav-link.active .gkmmanu {
-content:url("https://gkmedu.gkm.vn/wp-content/uploads/2023/01/GKM_Manu_2.png");
+content:url("../img/logo/GKM_manu_2.png");
 }
 .features .nav-link.active .mbv {
-content:url("https://gkmedu.gkm.vn/wp-content/uploads/2023/01/MBV_2.png");
+content:url("../img/logo/GKM_mbv_2.png");
 }
 
 .features .nav-link.active i {
@@ -3573,9 +3663,12 @@ color: #fff;
 }
 
 .why-us .content h3 {
-font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+
 font-size: 34px;
-margin-bottom: 30px;
+margin-bottom: 10px;
 color: #fff;
 }
 
@@ -4533,6 +4626,8 @@ box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
 .course .course-member {
   width:400px;
   height: 100%;
+  border-radius: 8px;
+
 }
 
 .course .course-member .member-img {
@@ -4570,10 +4665,14 @@ box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
   line-height: 0;
   font-size: 16px;
 }
-
-.course .course-member .social a:hover {
-  background: var(--color-primary-light);
-}
+.course .course-member{
+  
+  box-shadow: 0px 5px 15px rgba(var(--color-black-rgb), 0.3);
+  }
+.course .course-member:hover {
+  
+    box-shadow: 0px 5px 30px rgba(var(--color-primary-rgb), 0.3);
+    }
 
 .course .course-member .social i {
   font-size: 18px;
@@ -4782,4 +4881,9 @@ box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
   100% {
     transform: translate(85px, 0%);
   }
+}
+
+
+.hero-container{
+  padding-top: 20px;
 }

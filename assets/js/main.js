@@ -214,6 +214,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
+   * video Slider
+   */
+  new Swiper('.video-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 80
+      },
+      992: {
+        slidesPerView: 6,
+        spaceBetween: 120
+      }
+    }
+  });
+  /**
    * Clients Slider
    */
   new Swiper('.clients-slider', {
@@ -266,7 +296,7 @@ new Swiper('.new-client-slider', {
     },
 
     1200: {
-      slidesPerView: 6,
+      slidesPerView: 5,
       spaceBetween: 20
     }
   }
@@ -376,4 +406,10 @@ $('#experience').find('.timeline-item:not(:first)').each(function(i){
             } , itemsDelay * (i * 2));
         }
     });
+});
+
+
+// slect language
+$(function(){
+  $('.selectpicker').selectpicker();
 });

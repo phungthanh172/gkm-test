@@ -96,7 +96,7 @@ section {
 .section-header h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 10px;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -477,7 +477,13 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
+.navbarhidden {
+display: none;
+}
 @media (max-width: 1279px) {
+  .navbarhidden{
+    display: inline;
+  }
   .navbar {
     position: fixed;
     top: 0;
@@ -1358,7 +1364,6 @@ code cũ
 .clients .swiper-slide img {
   opacity: 0.5;
   transition: 0.3s;
-  filter: grayscale(100);
 }
 
 .clients .swiper-slide img:hover {
@@ -1369,7 +1374,9 @@ code cũ
   display: flex;
   justify-content: center;
 }
-
+.clients-slider{
+  margin-top: 20px;
+}
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
@@ -1863,6 +1870,30 @@ code cũ
 
   }
 }
+@media (max-width: 420px) {
+  .new-client .video-item {
+    box-sizing: content-box;
+    height: 250px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+  }
+  .new-video{
+    width: 300px;
+  }
+  .new-client-image{
+    height: 300px;
+  }
+  .new-sach{
+    height: 250px;
+    box-shadow: 0px 5px 15px rgba(var(--color-black-rgb), 0.3);
+  
+  }
+  .new-client .video-item .title-video{
+    font-size: 16px;
+
+  }
+}
 /*--------------------------------------------------------------
 # Video
 --------------------------------------------------------------*/
@@ -2265,6 +2296,16 @@ code cũ
     height: 400px;
   }
 }
+@media (max-width: 550px) {
+  .portfolio .portfolio-item {
+    height: 300px;
+  }
+}
+@media (max-width: 420px) {
+  .portfolio .portfolio-item {
+    height: 200px;
+  }
+}
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
@@ -2381,8 +2422,21 @@ code cũ
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+  height: 276px;
+  width: auto;
+  display: fill;
 }
 
+@media (max-width: 992px) {
+  .recent-blog-posts .post-box .post-img {
+    height: 450px;
+  }
+  .recent-blog-posts .post-img-sticky {
+    width: 100%;
+  
+  }
+  
+}
 .recent-blog-posts .post-box .post-img img {
   transition: 0.5s;
 }
@@ -2415,6 +2469,7 @@ code cũ
 .recent-blog-posts .post-box p {
   margin: 15px 0 0 0;
   color: rgba(var(--color-secondary-dark-rgb), 0.7);
+  text-align: justify;
 }
 
 .recent-blog-posts .post-box .readmore {
@@ -4962,3 +5017,8 @@ box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
   margin-bottom: 0px;
 }
 
+
+/* .content jutify*/
+.content{
+  text-align: justify !important;
+}

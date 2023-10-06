@@ -247,10 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
    * Clients Slider
    */
   new Swiper('.clients-slider', {
-    speed: 400,
+    speed: 10,
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: false
     },
     slidesPerView: 'auto',
@@ -292,10 +292,22 @@ new Swiper('.new-client-slider', {
   breakpoints: {
     320: {
       slidesPerView: 1,
+      spaceBetween: 10
+    },
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    992: {
+      slidesPerView: 3,
       spaceBetween: 20
     },
 
     1200: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    },
+    1400: {
       slidesPerView: 5,
       spaceBetween: 20
     }
@@ -408,8 +420,23 @@ $('#experience').find('.timeline-item:not(:first)').each(function(i){
     });
 });
 
+// table of content
+window.addEventListener('DOMContentLoaded', () => {
 
-// slect language
-$(function(){
-  $('.selectpicker').selectpicker();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+      }
+    });
+  });
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+  
 });

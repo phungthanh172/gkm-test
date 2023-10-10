@@ -2437,6 +2437,16 @@ code cũ
   }
   
 }
+@media (max-width: 600px) {
+  .recent-blog-posts .post-box .post-img {
+    height: 250px;
+  }
+  .recent-blog-posts .post-img-sticky {
+    height: 250px;
+  
+  }
+  
+}
 .recent-blog-posts .post-box .post-img img {
   transition: 0.5s;
 }

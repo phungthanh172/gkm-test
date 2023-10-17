@@ -5021,3 +5021,45 @@ box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
 .content{
   text-align: justify !important;
 }
+
+/*
+Insert by ThanhPK: Course in Blog
+*/
+.blog .course-member {
+  width:100%;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.blog .course-member .member-img {
+  border-radius: 8px;
+  width:100%;
+
+  overflow: hidden;
+}
+
+.blog .course-member .social {
+  position: absolute;
+  left: 0;
+  top: -18px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.blog .course-member{
+  
+  box-shadow: 0px 5px 15px rgba(var(--color-black-rgb), 0.3);
+  }
+.blog .course-member:hover {
+  
+    box-shadow: 0px 5px 30px rgba(var(--color-primary-rgb), 0.3);
+    }
+
+.blog .blog-details {
+  margin-top: 20px;
+}

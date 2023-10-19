@@ -1992,6 +1992,7 @@ code cũ
 .testimonials .testimonial-item p {
   font-style: italic;
   margin: 15px auto 15px auto;
+  font-size: 14px!important;
 }
 
 .testimonials .swiper-pagination {
@@ -2474,6 +2475,7 @@ code cũ
   margin: 15px 0 0 0;
   color: rgba(var(--color-secondary-dark-rgb), 0.7);
   text-align: justify;
+  font-size: 14px!important;
 }
 
 .recent-blog-posts .post-box .readmore {
@@ -3538,6 +3540,12 @@ margin-right: 4px;
 color: #a60b23;
 }
 
+.features .tab-pane p {
+  font-size: 14px!important;
+  }
+  .features .tab-pane li {
+    font-size: 14px!important;
+    }
 .features .tab-pane p:last-child {
 margin-bottom: 0;
 }

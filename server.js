@@ -34,7 +34,12 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// Chạy backend ở cổng 3000
-app.listen(3000, () => {
-    console.log("Chatbot Server đang chạy tại http://localhost:3000");
-});
+// Export for Vercel
+export default app;
+
+// Chạy backend ở cổng 3000 khi chạy local
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(3000, () => {
+        console.log("Chatbot Server đang chạy tại http://localhost:3000");
+    });
+}

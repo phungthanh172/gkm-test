@@ -88,13 +88,23 @@ section {
 }
 
 .section-header h2 {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 900;
   font-size: 36px;
   margin-bottom: 10px;
   text-transform: uppercase;
   color: var(--color-primary);
 }
+@media (max-width: 720px) {
+
+  .section-header h2 {
+    font-weight: 750;
+    font-size: 28px;
+    margin-bottom: 5px;
+
+  }
+}
+
 
 .section-header p {
   margin: 0 auto;
@@ -208,7 +218,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  padding: 15px 0;
+  /* padding: 15px 0; Thanh 14/11/2023 */ 
   transition: all 0.5s;
   z-index: 997;
   background: rgba(var(--color-white-rgb), 0.85);
@@ -456,6 +466,7 @@ section {
     left: 100%;
     visibility: visible;
   }
+
 }
 
 @media (min-width: 1280px) and (max-width: 1366px) {
@@ -466,8 +477,11 @@ section {
   .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
-}
 
+}
+.navbar .dropdown{
+  text-align: center;
+}
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
@@ -574,6 +588,9 @@ display: none;
     inset: 0;
     background: rgba(var(--color-secondary-rgb), 0.8);
     z-index: 9996;
+  }
+  .navbar .dropdown{
+    text-align: left!important;
   }
 }
 
@@ -959,7 +976,13 @@ display: none;
   }
 }
 
-
+.hero-fullscreen {
+  padding: 0px!important;
+}
+#hero-course{
+  padding: 0px!important;
+}
+  
 /*--------------------------------------------------------------
 # Fullscreen Hero Section
 .hero-fullscreen {
@@ -975,20 +998,21 @@ display: none;
 #hero2 {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   
   #heroVideoBg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: fill;
+    width: 100vh;
+    object-fit: cover;
     z-index: -1;
-    display: none;
+    display: inline-block;
     
   }
 }
+/*
+Update 06112023
+Xoá
 @media (max-width: 768px) {
   #hero {
     height: 50vh!important;
@@ -1027,6 +1051,41 @@ display: none;
     padding-top: 100px;
   }
 }
+*/
+
+#hero {
+  position: relative;
+  width: 100%;
+  
+  #heroVideoBg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+    display: inline-block;
+    margin-top: 0px;
+
+  }
+  #heroImgBg {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+  #heroContent {
+    text-align: center;
+    padding-top: 0px;
+  }
+}
 /*--------------------------------------------------------------
 code cũ
 .hero-fullscreen {
@@ -1053,7 +1112,7 @@ code cũ
 
 
 .hero-fullscreen h2 {
-  margin: 0 0 10px 0;
+  margin: 0px;
   font-size: 32px;
   font-weight: 300;
   color: var(--color-secondary);
@@ -1522,7 +1581,7 @@ code cũ
   padding: 12px 24px;
   border-radius: 5px;
   transition: 0.3s;
-  display: -nline-flex;
+  display: -n line-flex;
   align-items: center;
   justify-content: center;
   color: var(--color-white);
@@ -1686,11 +1745,21 @@ code cũ
 
 .features .tab-pane h3 {
   
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 900;
     font-size: 36px;
     color: var(--color-primary);
   
+}
+@media (max-width: 720px) {
+  .features .tab-pane h3 {
+  
+    font-weight: 750;
+    font-size: 30px;
+    margin-bottom: 5px;
+  
+  }
+
 }
 
 .features .tab-pane ul {
@@ -1830,9 +1899,9 @@ code cũ
 
 /* Title video*/
 .new-client .video-item .title-video{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 12px;
   text-align: justify;
   margin: 10px 10px 5px 10px;
   color: var(--color-white);
@@ -1860,7 +1929,7 @@ code cũ
   
   }
   .new-client .video-item .title-video{
-    font-size: 28px;
+    font-size: 20px;
 
   }
 }
@@ -1884,7 +1953,7 @@ code cũ
   
   }
   .new-client .video-item .title-video{
-    font-size: 16px;
+    font-size: 12px;
 
   }
 }
@@ -1939,7 +2008,7 @@ code cũ
   box-sizing: content-box;
   padding: 30px 30px 30px 60px;
   margin: 30px 15px;
-  min-height: 200px;
+  min-height: 120px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   position: relative;
   background: #fff;
@@ -2035,7 +2104,7 @@ code cũ
 
 @media (min-width: 1200px) {
   .testimonials .testimonial-item p {
-    height: 450px;
+    height: 250px;
   }
 }
 @media (max-width: 767px) {
@@ -2047,7 +2116,7 @@ code cũ
 
 /* Title testimonials*/
 .testimonials .title-quote{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: var(--color-black);
@@ -2562,16 +2631,16 @@ code cũ
   color: var(--color-white);
 }
 
-.contact .php-email-form {
+.contact  {
   width: 100%;
   background: var(--color-white);
 }
 
-.contact .php-email-form .form-group {
+.contact  .form-group {
   padding-bottom: 8px;
 }
 
-.contact .php-email-form .error-message {
+.contact  .error-message {
   display: none;
   color: var(--color-white);
   background: var(--color-red);
@@ -2580,11 +2649,11 @@ code cũ
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact  .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact  .sent-message {
   display: none;
   color: var(--color-white);
   background: var(--color-green);
@@ -2593,14 +2662,14 @@ code cũ
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact  .loading {
   display: none;
   background: var(--color-white);
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact  .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -2612,32 +2681,32 @@ code cũ
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
+.contact  input[type=text],
+.contact  input[type=email],
+.contact  textarea {
   border-radius: 0px;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
+.contact  input[type=text]:focus,
+.contact  input[type=email]:focus,
+.contact  textarea:focus {
   border-color: var(--color-secondary-light);
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email] {
+.contact  input[type=text],
+.contact  input[type=email] {
   height: 48px;
   padding: 10px 15px;
 }
 
-.contact .php-email-form textarea {
+.contact  textarea {
   padding: 10px 12px;
   height: 290px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact  button[type=submit] {
   background: var(--color-primary);
   border: 0;
   padding: 13px 50px;
@@ -2645,8 +2714,19 @@ code cũ
   transition: 0.4s;
   border-radius: 0;
 }
+.contact  .button-submit {
+  background: var(--color-primary);
+  border: 0;
+  padding: 13px 50px;
+  color: var(--color-white);
+  transition: 0.4s;
+  border-radius: 0;
+}
+.contact  .button-submit:hover {
+  background: rgba(var(--color-primary-rgb), 0.85);
+}
 
-.contact .php-email-form button[type=submit]:hover {
+.contact  button[type=submit]:hover {
   background: rgba(var(--color-primary-rgb), 0.85);
 }
 
@@ -3461,6 +3541,13 @@ transition: 0s;
 cursor: pointer;
 height: 100%;
 }
+@media (min-width: 768px) {
+  .features .nav-link {
+    padding: 15px 10px;
+  }
+  }
+
+
 
 .features .nav-link i {
 font-size: 32px;
@@ -3487,6 +3574,9 @@ border-color: #a60b23;
 .features .nav-link.active h4 {
 color: #ffffff;
 }
+.features .nav-link.active .gkmgroup {
+  content:url("../img/logo/GKM_group_2.png");
+  }
 .features .nav-link.active .gkmlean {
 content:url("../img/logo/GKM_finest_2.png");
 }
@@ -3786,7 +3876,7 @@ color: #a60b23;
 --------------------------------------------------------------*/
 .why-us{
 padding-top:10px;
-padding-bottom:10px;
+padding-bottom:40px;
 text-align: justify;
 }
 .why-us .content {
@@ -3797,7 +3887,7 @@ color: #fff;
 }
 
 .why-us .content h3 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
     font-weight: 900;
     font-size: 36px;
 
@@ -4316,7 +4406,7 @@ font-weight: 500;
 }
 
 .course_why-us .video-box {
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 400px;
@@ -4371,6 +4461,7 @@ font-weight: 500;
 .course_why-us .accordion-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
+  font-size: 14px!important;
 }
 
 .course_why-us .accordion-list .icon-show {
@@ -4527,6 +4618,7 @@ font-weight: 500;
 .faq .faq-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
+  font-size: 14px!important;
 }
 
 .faq .faq-list .icon-show {
@@ -4731,7 +4823,7 @@ border-radius:2px;
 font-weight:bold;
 border:none;color:#fff !important;
 text-decoration:none;
-font-family:'Open Sans Condensed',sans-serif;
+font-family:'Open Sans',sans-serif;
 font-size:14px;
 line-height:1;
 cursor:pointer;
@@ -5021,7 +5113,7 @@ box-shadow:0 0 5px #ef7f65 inset, 0 1px 1px #eee
   margin-bottom: 0px;
 }
 .hero-container{
-  padding-top: 20px;
+  padding-top: 0px;
   margin-bottom: 0px;
 }
 
@@ -5072,4 +5164,26 @@ Insert by ThanhPK: Course in Blog
 
 .blog {
   margin-top: 40px;
+}
+
+@media (min-width: 992px) {
+  .features .nav-tabs .nav-item{
+    width: 14%;
+  }
+}
+
+.contact .form-group .bold{
+  font-size: 14px;
+}
+.contact .button-submit {
+  font-size: 16px!important;
+}
+.contact span{
+  font-size: 14px;
+}
+.contact .wpcf7-response-output{
+  font-size: 14px;
+}
+.contact .wpcf7-not-valid-tip{
+  font-size: 14px;
 }

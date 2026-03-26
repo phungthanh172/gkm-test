@@ -1082,6 +1082,10 @@
           body: JSON.stringify({ message: userInput })
         });
 
+        if (!response.ok) {
+          throw new Error("Phản hồi từ máy chủ quá thời gian (Timeout). Vui lòng thử lại.");
+        }
+
         const data = await response.json();
 
         // Xoá typing indicator và hiện tin nhắn thật

@@ -1026,7 +1026,27 @@
     }
   </style>
 
+  <!-- Markdown parser for AI responses -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <script>
+    // ============================================================
+    // CẤU HÌNH
+    // ============================================================
+
+    // URL của Google Apps Script Web App (THAY BẰNG URL THẬT CỦA BẠN)
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrCTSR0Haocnxup0jDif52dh2CHmwgqHB2wMJmPhRzhPc8X2qfzzhn2iaWrK3BWnlS/exec';
+
+    // Session ID duy nhất cho mỗi phiên tải trang
+    const AI_CHAT_SESSION_ID = 'session_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+
+    // Mảng lưu toàn bộ lịch sử hội thoại
+    const conversationHistory = [];
+
+    // ============================================================
+    // HÀM ĐIỀU KHIỂN CHATBOT
+    // ============================================================
+
     function toggleChat() {
       const chatWindow = document.getElementById('chatbot-window');
       const toggleBtn = document.getElementById('chatbot-toggle').querySelector('i');
@@ -1059,6 +1079,82 @@
       return msgDiv;
     }
 
+    // ============================================================
+    // HÀM BÓC TÁCH DỮ LIỆU LEAD TỪ CÂU TRẢ LỜI CỦA AI
+    // ============================================================
+
+    function processAIResponse(aiResponse) {
+      const dataPattern = /\|\|LEAD_DATA:\s*(\{.*?\})\s*\|\|/;
+
+      // Xây dựng text lịch sử chat cho Google Sheets
+      let formattedHistory = "";
+      if (conversationHistory.length > 0) {
+        formattedHistory = conversationHistory.map(msg => {
+          let role = msg.role === 'user' ? 'Khách' : 'AI';
+          let content = msg.content.replace(dataPattern, "").trim();
+          return `${role}: ${content}`;
+        }).join('\n\n');
+      }
+
+      if (aiResponse.includes("||LEAD_DATA:")) {
+        const match = aiResponse.match(dataPattern);
+
+        if (match && match[1]) {
+          try {
+            const leadData = JSON.parse(match[1]);
+            console.log("✅ Dữ liệu khách hàng bóc được:", leadData);
+            console.log("🎯 Mức độ:", leadData.intent_level, "| Quan tâm:", leadData.interest);
+
+            // Gửi dữ liệu nếu có ít nhất 1 thông tin
+            if (leadData.name || leadData.phone || leadData.email) {
+              sendLeadToGoogleSheets(leadData, formattedHistory);
+            }
+          } catch (error) {
+            console.error("❌ Lỗi parse JSON từ AI:", error);
+          }
+        }
+        // Xóa tag ẩn khỏi câu trả lời
+        aiResponse = aiResponse.replace(dataPattern, "").trim();
+      }
+      return aiResponse;
+    }
+
+    // ============================================================
+    // HÀM GỬI DỮ LIỆU LEAD LÊN GOOGLE SHEETS
+    // ============================================================
+
+    async function sendLeadToGoogleSheets(leadData, chatHistoryText) {
+      if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL') {
+        console.warn("⚠️ Chưa cấu hình GOOGLE_SCRIPT_URL. Dữ liệu chưa được gửi.");
+        return;
+      }
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: leadData.name || '',
+            phone: leadData.phone || '',
+            email: leadData.email || '',
+            interest: leadData.interest || '',
+            intent_level: leadData.intent_level || '',
+            source: window.location.href,
+            sessionId: AI_CHAT_SESSION_ID,
+            chatHistory: chatHistoryText,
+            timestamp: new Date().toLocaleString('vi-VN')
+          })
+        });
+        console.log("📤 Đã đồng bộ dữ liệu vào Google Sheets! Level:", leadData.intent_level);
+      } catch (err) {
+        console.warn("⚠️ Không gửi được dữ liệu lead:", err);
+      }
+    }
+
+    // ============================================================
+    // HÀM GỬI TIN NHẮN CHÍNH
+    // ============================================================
+
     async function sendMessage() {
       const inputField = document.getElementById("chatbotInput");
       const userInput = inputField.value.trim();
@@ -1068,18 +1164,25 @@
       appendMessage(userInput, 'user');
       inputField.value = "";
 
+      // Lưu vào lịch sử hội thoại
+      conversationHistory.push({ role: "user", content: userInput });
+
       // Hiển thị typing indicator
       const typingHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
       const typingDiv = appendMessage(typingHTML, 'bot', true);
       typingDiv.setAttribute('id', 'typing-indicator');
 
+      // Tự động nhận diện môi trường chạy (Local vs Production)
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+      const apiUrl = isLocal ? "http://localhost:3000/api/chat" : "https://gkm-test.vercel.app/api/chat";
+
       try {
-        const response = await fetch("https://gkm-test.vercel.app/api/chat", {
+        const response = await fetch(apiUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ message: userInput })
+          body: JSON.stringify({ messages: conversationHistory })
         });
 
         if (!response.ok) {
@@ -1088,9 +1191,15 @@
 
         const data = await response.json();
 
-        // Xoá typing indicator và hiện tin nhắn thật
+        // Bóc tách Lead Data trước khi hiển thị
+        let botReply = processAIResponse(data.reply);
+
+        // Lưu tin nhắn bot vào lịch sử (đã xóa tag ẩn)
+        conversationHistory.push({ role: "assistant", content: botReply });
+
+        // Xoá typing indicator và hiện tin nhắn (hỗ trợ Markdown)
         typingDiv.remove();
-        appendMessage(data.reply, 'bot');
+        appendMessage(marked.parse(botReply), 'bot', true);
 
       } catch (error) {
         typingDiv.remove();
